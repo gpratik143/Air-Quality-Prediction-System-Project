@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .container { max-width: 500px; margin: 0 auto; }
+        .result { background-color: #f0f0f0; padding: 20px; border-radius: 5px; }
+        a { color: #4CAF50; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            <h2>Predicted Air Quality Index (AQI): <strong>{{ prediction[0]|round(2) }}</strong></h2>
+            <p>
+                {% if prediction[0] < 50 %}
+                    <strong style="color: green;">Good Air Quality</strong> - Air pollution poses little or no risk
+                {% elif prediction[0] < 100 %}
+                    <strong style="color: yellow;">Moderate Air Quality</strong> - Acceptable air quality
+                {% elif prediction[0] < 150 %}
+                    <strong style="color: orange;">Unhealthy for Sensitive Groups</strong> - Sensitive groups may experience health effects
+                {% elif prediction[0] < 200 %}
+                    <strong style="color: red;">Unhealthy</strong> - General public may begin to experience health effects
+                {% elif prediction[0] < 300 %}
+                    <strong style="color: darkred;">Very Unhealthy</strong> - Health alert
+                {% else %}
+                    <strong style="color: purple;">Hazardous</strong> - Health warning
+                {% endif %}
+            </p>
+        </div>
+        <br>
+        <a href="/">Back to Prediction Form</a>
+    </div>
+</body>
+</html>

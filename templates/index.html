@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Air Quality Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .container { max-width: 500px; margin: 0 auto; }
+        input { width: 100%; padding: 8px; margin: 8px 0; }
+        button { background-color: #4CAF50; color: white; padding: 10px; cursor: pointer; width: 100%; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Air Quality Index Prediction</h1>
+        <form method="POST" action="/predict">
+            <label>Average Temperature (T):</label>
+            <input type="number" name="T" required>
+            
+            <label>Max Temperature (TM):</label>
+            <input type="number" name="TM" required>
+            
+            <label>Min Temperature (Tm):</label>
+            <input type="number" name="Tm" required>
+            
+            <label>Pressure (SLP):</label>
+            <input type="number" name="SLP" required>
+            
+            <label>Humidity (H):</label>
+            <input type="number" name="H" required>
+            
+            <label>Visibility (VV):</label>
+            <input type="number" step="0.1" name="VV" required>
+            
+            <label>Wind Speed (V):</label>
+            <input type="number" step="0.1" name="V" required>
+            
+            <label>Max Wind Speed (VM):</label>
+            <input type="number" name="VM" required>
+            
+            <button type="submit">Predict AQI</button>
+        </form>
+    </div>
+</body>
+</html>
