@@ -1,108 +1,169 @@
-# Air-Quality-Prediction
+# 🌍 Air Quality Prediction System
 
-## Table of Content
-  * Video Demo
-  * Overview
-  * Motivation
-  * Data Collection
-  * Resnet(Transform Learning)
-  * Installation and Run 
-  * Deployement on AWS
-  * Future scope of the Project
- 
-## Linkdin Profile
-For any queries regarding about this project contact me
+> **👨‍💻 Developed by Pratik**
 
-Link : https://www.linkedin.com/in/anil-l-b023631b6/
+---
 
-## Video Demo
+## 📌 Overview
 
+**Air Quality Prediction System** is a Machine Learning-based project that predicts the **Air Quality Index (AQI)** using environmental parameters such as temperature, humidity, pressure, and wind conditions.
 
-https://user-images.githubusercontent.com/71332138/136665059-bbd3d181-1423-4da5-99bb-77882811767d.mov
+This project helps in understanding pollution trends and enables early forecasting for better environmental awareness and decision-making.
 
+---
 
+## 🎯 Objective
 
+- Predict AQI using historical environmental data
+- Apply Machine Learning models for accurate forecasting
+- Build a user-friendly interface using **Flask**
+- Provide real-time AQI prediction based on user input
 
+---
 
-## Overview
-Air pollution forecasting is the application of science and technology to predict the composition of the air pollution in the atmosphere for a given location and time. Mainstream pollution prediction algorithms tend to utilize air quality index or PM2. 5 concentration to indicate pollution level.
+## 🚀 Features
 
-The forecast may give the pollutant's concentration or the air quality index.
+| Feature | Description |
+|--------|-------------|
+| 📊 Data Preprocessing | Feature engineering on raw environmental data |
+| 🤖 Multiple ML Models | Linear Regression, Random Forest, and more |
+| 🌐 Web Interface | User-friendly interface built with Flask |
+| 📈 Visualization | AQI trend charts and graphs |
+| ⚡ Real-time Prediction | Instant AQI prediction from user inputs |
 
-Countries and cities are given forecasts by state and local government organizations, as well as private companies like Airly, AirVisual, Aerostate, BreezoMeter, PlumeLabs, and DRAXIS that provide air pollution forecasts.
-Air pollution forecasting can be done by coupling weather forecasting systems with chemical transport model and atmospheric dispersion modeling.
+---
 
-## Motivation
-What to do when you are at home due to this pandemic situation? I started to learn Machine Learning and Deep Learning model to get most out of it. I came to know mathematics behind all supervised models,unspurervised models,CNN,ANN and RNN. Finally it is important to work on application (real world application) to actually make a difference. To get a experience you have to work thats the reason to perform my favourable work done.
+## 🧠 Machine Learning Models Used
 
+| Model | Type |
+|-------|------|
+| Linear Regression | Regression |
+| Decision Tree | Tree-based |
+| Random Forest | Ensemble |
+| Ridge Regression | Regularized |
+| Lasso Regression | Regularized |
+| KNN | Instance-based |
+| XGBoost | Gradient Boosting |
 
+---
 
+## 🛠️ Technologies Used
 
-## Data Collection 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
 
-I just took the Bangalore city Air Quality data with help of web scraping and you can find through online which City data you want
+- **Python** — Core programming language
+- **Pandas & NumPy** — Data manipulation and numerical computing
+- **Scikit-learn** — Machine learning model training & evaluation
+- **Flask** — Web application framework
+- **Matplotlib / Visualization Libraries** — Data visualization
 
+---
 
-## Random Forest
+## 📂 Project Structure
 
-Recent studies have incorporated machine learning techniques such as neural networks, regressions, and random forests to achieve high accuracy but I tried the random forest and it gives the good result 
+```
+Air-Quality-Prediction/
+│
+├── app.py                              # Flask web application
+├── train_model.py                      # Model training script
+├── requirements.txt                    # Python dependencies
+├── templates/                          # HTML templates
+├── static/                             # CSS, JS, images
+├── Data/                               # Dataset files
+├── *.ipynb                             # Jupyter Notebooks (model training)
+└── random_forest_regression_model.pkl  # Saved ML model
+```
 
-![Screenshot 2021-10-09 at 9 24 43 PM](https://user-images.githubusercontent.com/71332138/136665616-217d2265-53c7-4ad3-891b-cf0627a8c96c.png)
+---
 
+## ⚙️ Installation & Setup
 
-## Flask Framework
-Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. ... Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools.
+### Step 1: Clone the Repository
 
-Flask Tutorial : [https://www.tutorialspoint.com/flask/index.htm]
+```bash
+git clone https://github.com/gpratik143/Air-Quality-Prediction-System-Project.git
+cd Air-Quality-Prediction
+```
 
-## Screenshots of Project
+### Step 2: Install Dependencies
 
+```bash
+pip install -r requirements.txt
+```
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------
-![Screenshot 2021-10-09 at 8 28 03 PM](https://user-images.githubusercontent.com/71332138/136664728-a7611f2a-e388-437a-acd6-0f0c8340fb99.png)
+### Step 3: Run the Application
 
+```bash
+python app.py
+```
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-![Screenshot 2021-10-09 at 8 28 24 PM](https://user-images.githubusercontent.com/71332138/136664729-5d5c2ca8-3cf6-4bc4-8139-ff34dd48b7f5.png)
+> The application will start on `http://localhost:5000` by default.
 
+---
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 📊 Input Parameters
 
-![Screenshot 2021-10-09 at 8 28 33 PM](https://user-images.githubusercontent.com/71332138/136664734-96421644-e979-41bf-a6bc-6fd89659836a.png) 
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Parameter | Description |
+|-----------|-------------|
+| 🌡️ Average Temperature | Mean daily temperature |
+| 🔺 Max Temperature | Maximum recorded temperature |
+| 🔻 Min Temperature | Minimum recorded temperature |
+| 🔵 Pressure | Atmospheric pressure |
+| 💧 Humidity | Relative humidity percentage |
+| 👁️ Visibility | Atmospheric visibility |
+| 💨 Wind Speed | Average wind speed |
+| 🌬️ Max Wind Speed | Maximum recorded wind speed |
 
-## Installation and Run
-The Code is written in Python 3.9 If you don't have Python installed you can find it [here](https://www.python.org/downloads/). If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository:
+---
 
-Install Required Libraries
+## 📈 Output
 
-     Step 1: pip install -r requirements.txt
-     
-Running Project
+```
+✅ Predicted Air Quality Index (AQI)
+```
 
-     Step 2: Python app.py
+The model returns a numerical AQI value which can be mapped to standard air quality categories:
 
-## Technologies Used
+| AQI Range | Category |
+|-----------|----------|
+| 0 – 50 | 🟢 Good |
+| 51 – 100 | 🟡 Moderate |
+| 101 – 150 | 🟠 Unhealthy for Sensitive Groups |
+| 151 – 200 | 🔴 Unhealthy |
+| 201 – 300 | 🟣 Very Unhealthy |
+| 301+ | 🔵 Hazardous |
 
-![](https://forthebadge.com/images/badges/made-with-python.svg)  ![pandas](https://user-images.githubusercontent.com/71332138/134156736-9dcc4675-e588-42a6-9481-816ac08654ab.png).![numpy](https://user-images.githubusercontent.com/71332138/134540645-95fa9566-18ca-4719-8cc6-82153e96683c.png) ![flask](https://user-images.githubusercontent.com/71332138/136525463-d94befe6-f982-4f98-bd1c-833bdbd3c004.png)
-   
-         
-                            
-## Tools / IDE
-I used Jupyter NoteBook (Google Colab) for model training. used spyder for model deployment on the local system. To use Jupyter NoteBook and Spyder, just install anaconda.
+---
 
-Software Requirments
-* Python == 3.7.7
-* NumPy == 1.18.5
-* Flask == 1.1.2
+## 🔮 Future Enhancements
 
-## Deploy AWS :
+- [ ] Improve model accuracy using **Deep Learning**
+- [ ] Add **real-time API integration**
+- [ ] Enhance **UI/UX design**
+- [ ] Deploy on cloud platforms (**AWS / Azure**)
 
-Deployement Process going on...
+---
 
- 
-## Future Scope
+## 📬 Contact
 
-* Optimize Flask app.py
-* Add Extra Features 
-* Front-End 
+If you have any queries or suggestions, feel free to connect:
+
+🔗 **LinkedIn:** [Connect with Pratik](https://www.linkedin.com/in/pratikgupta999)
+
+---
+
+## ⭐ Conclusion
+
+This project demonstrates the application of **Machine Learning** in solving real-world environmental problems and showcases practical skills in:
+
+- ✅ Data Analysis
+- ✅ Model Building
+- ✅ Web Deployment
+
+---
+
+> 💡 *If you found this project useful, consider giving it a ⭐ star on GitHub!*
